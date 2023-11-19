@@ -22,19 +22,19 @@ switch(state)
 			if (!grounded) hFriction = hFrictionAir
 			hSpeed = approach(hSpeed, 0, hFriction)
 		}
-		hSpeed = clamp(hSpeed, -walkSpeed, walkSpeed)
+		hSpeed = clamp(hSpeed, -walkSpeed, walkSpeed) //TODO: Make it so you go fast in air
 		
 		vSpeed += gravity_
 		
 		
-		if (_keyJump) && (grounded)
+		if (_keyJump) && (grounded) //jump
 		{
 			grounded = false
 			vSpeedFraction = 0
 			vSpeed = -jumpSpeed
 		}
 		
-		/*
+		
 		if (mouse_check_button(mb_left)) //Gets player into grapple state, stores necessary info
 		{
 			grappleX = mouse_x
@@ -46,10 +46,10 @@ switch(state)
 			ropeLength = point_distance(grappleX, grappleY, x, y)
 			state = pState.swing
 		}
-		*/
+		
 	} break;
 	
-	/*
+	
 	case pState.swing:
 	{
 		var _ropeAngleAcceleration = -0.2 * dcos(ropeAngle) //if you told me cos() was gonna be part of my game dev career I prolly would have believed you
@@ -65,13 +65,44 @@ switch(state)
 		
 		if (_keyJump)
 		{
-			state = pState.normal
+			state = pState.normal //change to state.leap when implemented
 			vSpeedFraction = 0
 			vSpeed = -jumpSpeed
 		}
 		
 	}break;
-	*/
+/* TODO: Implement state.leap so players can go quick in the air, without accelerating out of control
+	case pState.leap:
+	{
+		if(grounded) state = pState.normal
+		var dir = _keyRight - _keyLeft
+		hSpeed += dir * walkAcceleration
+		
+		if (dir == 0)
+		{
+			var hFriction = hFrictionGround
+			if (!grounded) hFriction = hFrictionAir
+			hSpeed = approach(hSpeed, 0, hFriction)
+		}
+		//hSpeed = clamp(hSpeed, -walkSpeed, walkSpeed) //TODO: Tweak clamp to be more lenient in air
+		
+		vSpeed += gravity_
+		
+		
+		if (mouse_check_button(mb_left)) //Gets player into grapple state, stores necessary info
+		{
+			grappleX = mouse_x
+			grappleY = mouse_y
+			ropeX = x
+			ropeY = y
+			ropeAngleVelocity = 0
+			ropeAngle = point_direction(grappleX, grappleY, x, y)
+			ropeLength = point_distance(grappleX, grappleY, x, y)
+			state = pState.swing
+		}
+		
+	} break;
+*/
 }
 
 hSpeed += hSpeedFraction
@@ -82,21 +113,22 @@ hSpeed -= hSpeedFraction
 vSpeed -= vSpeedFraction
 
 //collision
+
 if (place_meeting(x+hSpeed, y, obj_wall))
 {
 	var _hStep = sign(hSpeed)
 	hSpeed = 0
 	hSpeedFraction = 0
 	while(!place_meeting(x+_hStep, y, obj_wall)) x+= _hStep;
-	/*
+	
 	if(state == pState.swing)
 	{
 		ropeAngle = point_direction(grappleX, grappleY, x, y)
 		ropeAngleVelocity = -ropeAngleVelocity //0?
 	}
-	*/
+	
 }
-x =+ hSpeed
+x += hSpeed
 
 if (place_meeting(x, y + vSpeed, obj_wall))
 {
@@ -104,12 +136,12 @@ if (place_meeting(x, y + vSpeed, obj_wall))
 	vSpeed = 0
 	vSpeedFraction = 0
 	while(!place_meeting(x, y + _vStep, obj_wall)) y += _vStep;
-	/*
+	
 	if(state == pState.swing)
 	{
 		ropeAngle = point_direction(grappleX, grappleY, x, y)
 		ropeAngleVelocity = -ropeAngleVelocity //0?
 	}
-	*/
+	
 }
 y += vSpeed

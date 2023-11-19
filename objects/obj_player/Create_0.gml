@@ -24,5 +24,6 @@ ropeLength = 0
 enum pState
 {
 	normal,
-	swing
+	swing,
+	leap
 }
