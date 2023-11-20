@@ -78,18 +78,17 @@ switch(state)
 	{
 		if(grounded) state = pState.normal //player regains control when touching the gorund
 		
-		/* //Tagged to disable movement: TODO: add restarined movement so you can't zoom without swinging
-		var dir = _keyRight - _keyLeft
-		hSpeed += dir * walkAcceleration
-		
-		if (dir == 0)
+		//Allows you to slow momentum in the air
+		if (hSpeed > 0) //swinging right
 		{
-			var hFriction = hFrictionGround
-			if (!grounded) hFriction = hFrictionAir
-			hSpeed = approach(hSpeed, 0, hFriction)
+			if (_keyLeft) hSpeed -= walkAcceleration	
+			//hSpeed = clamp(hSpeed, 0, 10000)
 		}
-		*/
-		//hSpeed = clamp(hSpeed, -walkSpeed, walkSpeed) //TODO: Tweak clamp to be more lenient in air
+		if (hSpeed < 0) //swinging left
+		{
+			if (_keyRight) hSpeed += walkAcceleration
+			//hSpeed = clamp(hSpeed, 10000, 0)
+		}
 		
 		vSpeed += gravity_ //gravity
 		
@@ -121,7 +120,7 @@ if (state != pState.leap)
 	vSpeed -= vSpeedFraction
 }
 
-
+//Keeps player inbounds
 if (x <= 32) x = 32;
 if (x >= room_width - 32) x = room_width - 32;
 if (y <=32) y = 32;
