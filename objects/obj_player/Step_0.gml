@@ -59,6 +59,16 @@ switch(state)
 		ropeAngle += ropeAngleVelocity
 		ropeAngleVelocity *= 0.99 //slowly reduce velocity
 		
+		//Movement while grappled
+		var dir = _keyRight - _keyLeft
+		ropeAngleVelocity += dir * ropeAcceleration
+		//TODO: Add clamp?
+		if (dir == 0)
+		{
+			var hFriction = hFrictionAir
+			ropeAngleVelocity = approach(ropeAngleVelocity, 0, hFriction)
+		}
+		
 		ropeX = grappleX + lengthdir_x(ropeLength, ropeAngle)
 		ropeY = grappleY + lengthdir_y(ropeLength, ropeAngle)
 		
@@ -67,7 +77,7 @@ switch(state)
 		
 		if (_keyJump)
 		{
-			state = pState.leap //change to state.leap when implemented
+			state = pState.leap
 			vSpeedFraction = 0
 			vSpeed = -jumpSpeed
 		}

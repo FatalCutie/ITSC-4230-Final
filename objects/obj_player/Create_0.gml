@@ -19,6 +19,7 @@ ropeAngleVelocity = 0
 ropeAngle = 0
 ropeLength = 0
 
+//state declarations
 enum pState
 {
 	normal,
