@@ -1,7 +1,8 @@
 /// @description This came to me in a dream
 
-grounded = (place_meeting(x,y+1,obj_wall))
+grounded = (place_meeting(x,y+1,obj_wall)) //boolean for if on the ground or not
 
+//make code a lil bit more readable
 var _keyLeft = keyboard_check(ord("A"))
 var _keyRight = keyboard_check(ord("D"))
 var _keyUp = keyboard_check(ord("W"))
@@ -12,7 +13,7 @@ switch(state)
 {
 	case pState.normal:
 	{
-		
+		//Movement
 		var dir = _keyRight - _keyLeft
 		hSpeed += dir * walkAcceleration
 		
@@ -22,9 +23,10 @@ switch(state)
 			if (!grounded) hFriction = hFrictionAir
 			hSpeed = approach(hSpeed, 0, hFriction)
 		}
-		hSpeed = clamp(hSpeed, -walkSpeed, walkSpeed) //TODO: Make it so you go fast in air
 		
-		vSpeed += gravity_
+		hSpeed = clamp(hSpeed, -walkSpeed, walkSpeed) //clamp speed, unclamps when grappling
+		
+		vSpeed += gravity_ //gravity
 		
 		
 		if (_keyJump) && (grounded) //jump
@@ -52,7 +54,7 @@ switch(state)
 	
 	case pState.swing:
 	{
-		var _ropeAngleAcceleration = -0.2 * dcos(ropeAngle) //if you told me cos() was gonna be part of my game dev career I prolly would have believed you
+		var _ropeAngleAcceleration = -0.2 * dcos(ropeAngle) //if you told me cos() was gonna be part of my game dev career I probably would have believed you
 		ropeAngleVelocity += _ropeAngleAcceleration
 		ropeAngle += ropeAngleVelocity
 		ropeAngleVelocity *= 0.99 //slowly reduce velocity
@@ -65,16 +67,18 @@ switch(state)
 		
 		if (_keyJump)
 		{
-			state = pState.normal //change to state.leap when implemented
+			state = pState.leap //change to state.leap when implemented
 			vSpeedFraction = 0
 			vSpeed = -jumpSpeed
 		}
 		
 	}break;
-/* TODO: Implement state.leap so players can go quick in the air, without accelerating out of control
-	case pState.leap:
+
+	case pState.leap: //When a player jumps out of a grapple
 	{
-		if(grounded) state = pState.normal
+		if(grounded) state = pState.normal //player regains control when touching the gorund
+		
+		/* //Tagged to disable movement: TODO: add restarined movement so you can't zoom without swinging
 		var dir = _keyRight - _keyLeft
 		hSpeed += dir * walkAcceleration
 		
@@ -84,9 +88,10 @@ switch(state)
 			if (!grounded) hFriction = hFrictionAir
 			hSpeed = approach(hSpeed, 0, hFriction)
 		}
+		*/
 		//hSpeed = clamp(hSpeed, -walkSpeed, walkSpeed) //TODO: Tweak clamp to be more lenient in air
 		
-		vSpeed += gravity_
+		vSpeed += gravity_ //gravity
 		
 		
 		if (mouse_check_button(mb_left)) //Gets player into grapple state, stores necessary info
@@ -102,18 +107,28 @@ switch(state)
 		}
 		
 	} break;
-*/
+
 }
 
-hSpeed += hSpeedFraction
-vSpeed += vSpeedFraction
-hSpeedFraction = frac(hSpeed)
-vSpeedFraction = frac(vSpeed)
-hSpeed -= hSpeedFraction
-vSpeed -= vSpeedFraction
+//Movement
+if (state != pState.leap)
+{
+	hSpeed += hSpeedFraction
+	vSpeed += vSpeedFraction
+	hSpeedFraction = frac(hSpeed)
+	vSpeedFraction = frac(vSpeed)
+	hSpeed -= hSpeedFraction
+	vSpeed -= vSpeedFraction
+}
 
-//collision
 
+if (x <= 32) x = 32;
+if (x >= room_width - 32) x = room_width - 32;
+if (y <=32) y = 32;
+if (y >= room_height - 32) y = room_height - 32
+
+
+//Collision
 if (place_meeting(x+hSpeed, y, obj_wall))
 {
 	var _hStep = sign(hSpeed)
@@ -124,7 +139,7 @@ if (place_meeting(x+hSpeed, y, obj_wall))
 	if(state == pState.swing)
 	{
 		ropeAngle = point_direction(grappleX, grappleY, x, y)
-		ropeAngleVelocity = -ropeAngleVelocity //0?
+		ropeAngleVelocity = -ropeAngleVelocity //bounces off of walls
 	}
 	
 }
@@ -140,7 +155,7 @@ if (place_meeting(x, y + vSpeed, obj_wall))
 	if(state == pState.swing)
 	{
 		ropeAngle = point_direction(grappleX, grappleY, x, y)
-		ropeAngleVelocity = -ropeAngleVelocity //0?
+		ropeAngleVelocity = 0 //stops when hitting the ground
 	}
 	
 }
