@@ -1,0 +1,1 @@
+timer += 1/room_speed //keeps track of time in level

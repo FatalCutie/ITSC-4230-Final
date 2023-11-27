@@ -36,8 +36,8 @@
   ],
   "solid": false,
   "spriteId": {
-    "name": "OLDspr_player",
-    "path": "sprites/OLDspr_player/OLDspr_player.yy",
+    "name": "spr_monkey",
+    "path": "sprites/spr_monkey/spr_monkey.yy",
   },
   "spriteMaskId": null,
   "visible": true,
