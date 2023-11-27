@@ -17,8 +17,13 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings": [
-    {"name":"spr_player","order":1,"path":"sprites/spr_player/spr_player.yy",},
+    {"name":"OLDspr_player","order":1,"path":"sprites/OLDspr_player/OLDspr_player.yy",},
     {"name":"obj_wall","order":1,"path":"objects/obj_wall/obj_wall.yy",},
+    {"name":"spr_robot","order":6,"path":"sprites/spr_robot/spr_robot.yy",},
+    {"name":"spr_saw","order":7,"path":"sprites/spr_saw/spr_saw.yy",},
+    {"name":"spr_monkey","order":4,"path":"sprites/spr_monkey/spr_monkey.yy",},
     {"name":"spr_wall","order":2,"path":"sprites/spr_wall/spr_wall.yy",},
+    {"name":"spr_acid","order":3,"path":"sprites/spr_acid/spr_acid.yy",},
+    {"name":"spr_platform","order":5,"path":"sprites/spr_platform/spr_platform.yy",},
   ],
 }
