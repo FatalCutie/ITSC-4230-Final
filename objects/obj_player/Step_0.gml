@@ -56,7 +56,10 @@ switch(state)
 	case pState.swing:
 	{
 		sprite_index = spr_swing
-		var _ropeAngleAcceleration = -0.2 * dcos(ropeAngle) //if you told me cos() was gonna be part of my game dev career I probably would have believed you
+		var _ropeAngleAcceleration = -0.2 * dcos(ropeAngle) //this exact formula is required for good swinging
+		//if you told me cos() was gonna be part of my game dev career I probably would have believed you
+		//var _ropeAngleAcceleration = 0.5
+		//TODO: Carry momentum into swing
 		ropeAngleVelocity += _ropeAngleAcceleration
 		ropeAngle += ropeAngleVelocity
 		//ropeAngleVelocity *= 0.99 //slowly reduce velocity
