@@ -18,6 +18,6 @@
   "preload": false,
   "sampleRate": 44100,
   "soundFile": "snd_death.mp3",
-  "type": 1,
+  "type": 0,
   "volume": 1.0,
 }

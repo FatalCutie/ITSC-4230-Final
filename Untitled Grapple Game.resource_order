@@ -24,7 +24,6 @@
     {"name":"spr_robot","order":6,"path":"sprites/spr_robot/spr_robot.yy",},
     {"name":"obj_acid","order":5,"path":"objects/obj_acid/obj_acid.yy",},
     {"name":"spr_saw","order":7,"path":"sprites/spr_saw/spr_saw.yy",},
-    {"name":"snd_jump","order":1,"path":"sounds/snd_jump/snd_jump.yy",},
     {"name":"obj_controller","order":2,"path":"objects/obj_controller/obj_controller.yy",},
     {"name":"spr_player","order":10,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"spr_monkeyWalk","order":4,"path":"sprites/spr_monkeyWalk/spr_monkeyWalk.yy",},
@@ -35,15 +34,10 @@
     {"name":"spr_banana","order":11,"path":"sprites/spr_banana/spr_banana.yy",},
     {"name":"spr_win","order":14,"path":"sprites/spr_win/spr_win.yy",},
     {"name":"spr_wall","order":2,"path":"sprites/spr_wall/spr_wall.yy",},
-<<<<<<< Updated upstream
     {"name":"Room3","order":2,"path":"rooms/Room3/Room3.yy",},
-=======
-    {"name":"snd_leap","order":2,"path":"sounds/snd_leap/snd_leap.yy",},
->>>>>>> Stashed changes
     {"name":"obj_token","order":4,"path":"objects/obj_token/obj_token.yy",},
     {"name":"spr_acid","order":3,"path":"sprites/spr_acid/spr_acid.yy",},
     {"name":"spr_death","order":13,"path":"sprites/spr_death/spr_death.yy",},
-    {"name":"snd_bounce","order":3,"path":"sounds/snd_bounce/snd_bounce.yy",},
     {"name":"spr_swing","order":8,"path":"sprites/spr_swing/spr_swing.yy",},
     {"name":"Room2","order":1,"path":"rooms/Room2/Room2.yy",},
     {"name":"spr_platform","order":5,"path":"sprites/spr_platform/spr_platform.yy",},
