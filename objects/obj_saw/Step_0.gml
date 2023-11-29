@@ -1,1 +1,2 @@
-image_angle -= 4
+/// @description Spins the saw
+image_angle -= 8
