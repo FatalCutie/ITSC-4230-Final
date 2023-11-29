@@ -44,6 +44,7 @@
     {"id":{"name":"spr_robot","path":"sprites/spr_robot/spr_robot.yy",},},
     {"id":{"name":"obj_acid","path":"objects/obj_acid/obj_acid.yy",},},
     {"id":{"name":"spr_saw","path":"sprites/spr_saw/spr_saw.yy",},},
+    {"id":{"name":"snd_jump","path":"sounds/snd_jump/snd_jump.yy",},},
     {"id":{"name":"snd_death","path":"sounds/snd_death/snd_death.yy",},},
     {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
@@ -56,10 +57,15 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"spr_win","path":"sprites/spr_win/spr_win.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
+<<<<<<< Updated upstream
     {"id":{"name":"Room3","path":"rooms/Room3/Room3.yy",},},
+=======
+    {"id":{"name":"snd_leap","path":"sounds/snd_leap/snd_leap.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"obj_token","path":"objects/obj_token/obj_token.yy",},},
     {"id":{"name":"spr_acid","path":"sprites/spr_acid/spr_acid.yy",},},
     {"id":{"name":"spr_death","path":"sprites/spr_death/spr_death.yy",},},
+    {"id":{"name":"snd_bounce","path":"sounds/snd_bounce/snd_bounce.yy",},},
     {"id":{"name":"spr_swing","path":"sprites/spr_swing/spr_swing.yy",},},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
     {"id":{"name":"spr_platform","path":"sprites/spr_platform/spr_platform.yy",},},

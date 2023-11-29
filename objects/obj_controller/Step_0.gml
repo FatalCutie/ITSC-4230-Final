@@ -1,6 +1,11 @@
-if (timerCheat = 1)
+var timeDecay = delta_time/1000000
+if (timerCheat = 1) //pause timer if cheat is active
 {
-timer += 1/room_speed //keeps track of time in level
+	if (timer > 0)
+	{
+		timer -= timeDecay
+	} else timer = 0;
+	showTime = ceil(timer)
 }
 
 //Cheat Codes
