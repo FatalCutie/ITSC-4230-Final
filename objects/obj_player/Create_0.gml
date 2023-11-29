@@ -10,7 +10,7 @@ vSpeedFraction = 0.0
 state = pState.normal
 grounded = true
 
-//Grapple Declarations
+//grapple declarations
 grappleX = 0
 grappleY = 0
 ropeX = 0
@@ -18,6 +18,9 @@ ropeY = 0
 ropeAngleVelocity = 0
 ropeAngle = 0
 ropeLength = 0
+
+//gameplay declarations
+points = 0
 
 //state declarations
 enum pState
