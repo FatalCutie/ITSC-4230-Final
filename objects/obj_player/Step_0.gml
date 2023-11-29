@@ -13,6 +13,7 @@ switch(state)
 {
 	case pState.normal:
 	{
+		if (hSpeed = 0) sprite_index = spr_player
 		//Movement
 		var dir = _keyRight - _keyLeft
 		hSpeed += dir * walkAcceleration
@@ -54,6 +55,7 @@ switch(state)
 	
 	case pState.swing:
 	{
+		sprite_index = spr_swing
 		var _ropeAngleAcceleration = -0.2 * dcos(ropeAngle) //if you told me cos() was gonna be part of my game dev career I probably would have believed you
 		ropeAngleVelocity += _ropeAngleAcceleration
 		ropeAngle += ropeAngleVelocity
@@ -169,3 +171,11 @@ if (place_meeting(x, y + vSpeed, obj_wall))
 	
 }
 y += vSpeed
+
+if (hSpeed != 0)
+{
+	if (state != pState.swing) sprite_index = spr_monkeyWalk; //walking animation when moving
+	if (hSpeed < 0) image_xscale = -1;
+	if (hSpeed > 0) image_xscale = 1;
+	//code for monkey standing still is in pState.normal
+}
