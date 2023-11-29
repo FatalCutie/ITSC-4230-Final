@@ -1,6 +1,11 @@
+var timerTick = delta_time/1000000
 if (timerCheat = 1)
 {
-timer += 1/room_speed //keeps track of time in level
+	if(myTime > 0)
+	{
+		myTime -= timerTick
+	} else myTime = 0;
+	showTime = ceil(myTime)
 }
 
 //Cheat Codes

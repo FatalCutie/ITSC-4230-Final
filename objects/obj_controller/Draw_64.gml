@@ -4,3 +4,9 @@ if (global.game_over) {
 	draw_set_color(c_white)
 	draw_text(room_width / 2, room_height / 2, "Game Over! Press ESC to restart.")
 }
+else
+{
+	draw_set_color(c_white)
+	draw_text(x, y, "Time left: " + string(showTime))
+	draw_text(x, y + 20, "Score: " + string(score))
+}

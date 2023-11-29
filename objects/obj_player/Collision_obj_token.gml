@@ -1,3 +1,3 @@
-/// @description Collect a banana, get a point
-points += 1
+/// @description Collect a banana, get other.pointValue points
 instance_destroy(other)
+score += other.pointValue
