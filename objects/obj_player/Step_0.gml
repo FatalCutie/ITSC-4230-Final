@@ -13,6 +13,7 @@ switch(state)
 {
 	case pState.normal:
 	{
+		if (hSpeed = 0) sprite_index = spr_player
 		//Movement
 		var dir = _keyRight - _keyLeft
 		hSpeed += dir * walkAcceleration
@@ -54,10 +55,14 @@ switch(state)
 	
 	case pState.swing:
 	{
-		var _ropeAngleAcceleration = -0.2 * dcos(ropeAngle) //if you told me cos() was gonna be part of my game dev career I probably would have believed you
+		sprite_index = spr_swing
+		var _ropeAngleAcceleration = -0.2 * dcos(ropeAngle) //this exact formula is required for good swinging
+		//if you told me cos() was gonna be part of my game dev career I probably would have believed you
+		//var _ropeAngleAcceleration = 0.5
+		//TODO: Carry momentum into swing
 		ropeAngleVelocity += _ropeAngleAcceleration
 		ropeAngle += ropeAngleVelocity
-		ropeAngleVelocity *= 0.99 //slowly reduce velocity
+		//ropeAngleVelocity *= 0.99 //slowly reduce velocity
 		
 		//Movement while grappled
 		var dir = _keyRight - _keyLeft
@@ -86,7 +91,8 @@ switch(state)
 
 	case pState.leap: //When a player jumps out of a grapple
 	{
-		if(grounded) state = pState.normal //player regains control when touching the gorund
+		if(grounded) state = pState.normal; //player regains control when touching the gorund
+		ropeAngleVelocity = hSpeed
 		
 		//Allows you to slow momentum in the air
 		if (hSpeed > 0) //swinging right
@@ -169,3 +175,11 @@ if (place_meeting(x, y + vSpeed, obj_wall))
 	
 }
 y += vSpeed
+
+if (hSpeed != 0)
+{
+	if (state != pState.swing) sprite_index = spr_monkeyWalk; //walking animation when moving
+	if (hSpeed < 0) image_xscale = -1;
+	if (hSpeed > 0) image_xscale = 1;
+	//code for monkey standing still is in pState.normal
+}
