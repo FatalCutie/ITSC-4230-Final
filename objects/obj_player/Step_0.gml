@@ -59,7 +59,7 @@ switch(state)
 		var _ropeAngleAcceleration = -0.2 * dcos(ropeAngle) //if you told me cos() was gonna be part of my game dev career I probably would have believed you
 		ropeAngleVelocity += _ropeAngleAcceleration
 		ropeAngle += ropeAngleVelocity
-		ropeAngleVelocity *= 0.99 //slowly reduce velocity
+		//ropeAngleVelocity *= 0.99 //slowly reduce velocity
 		
 		//Movement while grappled
 		var dir = _keyRight - _keyLeft
@@ -88,7 +88,8 @@ switch(state)
 
 	case pState.leap: //When a player jumps out of a grapple
 	{
-		if(grounded) state = pState.normal //player regains control when touching the gorund
+		if(grounded) state = pState.normal; //player regains control when touching the gorund
+		ropeAngleVelocity = hSpeed
 		
 		//Allows you to slow momentum in the air
 		if (hSpeed > 0) //swinging right
