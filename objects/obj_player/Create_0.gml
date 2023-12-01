@@ -19,6 +19,10 @@ ropeAngleVelocity = 0
 ropeAngle = 0
 ropeLength = 0
 
+//boost declarations
+boostDirection = 0
+canBoost = false
+
 //gameplay declarations
 points = 0
 

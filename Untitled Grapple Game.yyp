@@ -31,7 +31,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.8.2.108",
+    "IDEVersion": "2023.8.0.98",
   },
   "resources": [
     {"id":{"name":"obj_saw","path":"objects/obj_saw/obj_saw.yy",},},
@@ -44,7 +44,7 @@
     {"id":{"name":"spr_robot","path":"sprites/spr_robot/spr_robot.yy",},},
     {"id":{"name":"obj_acid","path":"objects/obj_acid/obj_acid.yy",},},
     {"id":{"name":"spr_saw","path":"sprites/spr_saw/spr_saw.yy",},},
-    {"id":{"name":"snd_death","path":"sounds/snd_death/snd_death.yy",},},
+    {"id":{"name":"snd_oldDeath","path":"sounds/snd_oldDeath/snd_oldDeath.yy",},},
     {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"spr_monkeyWalk","path":"sprites/spr_monkeyWalk/spr_monkeyWalk.yy",},},

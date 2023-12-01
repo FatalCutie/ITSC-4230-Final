@@ -86,6 +86,10 @@ switch(state)
 			vSpeedFraction = 0
 			vSpeed = -jumpSpeed
 		}
+		if (_keyDown)
+		{
+			state = pState.normal
+		}
 		
 	}break;
 

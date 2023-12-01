@@ -1,2 +1,3 @@
-timerCheat = 1
+timerCheat = false
 showTime = myTime
+funnyGameover = false
