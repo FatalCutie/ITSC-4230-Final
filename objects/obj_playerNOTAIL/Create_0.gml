@@ -24,9 +24,3 @@ ropeLength = 0
 points = 0
 
 //state declarations
-enum pState
-{
-	normal,
-	swing,
-	leap
-}

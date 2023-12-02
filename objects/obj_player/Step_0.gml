@@ -1,7 +1,6 @@
 /// @description This came to me in a dream
 
 grounded = (place_meeting(x,y+1,obj_wall)) //boolean for if on the ground or not
-
 //make code a lil bit more readable
 var _keyLeft = keyboard_check(ord("A"))
 var _keyRight = keyboard_check(ord("D"))
