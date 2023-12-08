@@ -42,6 +42,7 @@
     {"id":{"name":"scr_approach","path":"scripts/scr_approach/scr_approach.yy",},},
     {"id":{"name":"obj_tutorial1","path":"objects/obj_tutorial1/obj_tutorial1.yy",},},
     {"id":{"name":"OLDspr_player","path":"sprites/OLDspr_player/OLDspr_player.yy",},},
+    {"id":{"name":"path_saw_acid","path":"paths/path_saw_acid/path_saw_acid.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"spr_robot","path":"sprites/spr_robot/spr_robot.yy",},},
     {"id":{"name":"obj_acid","path":"objects/obj_acid/obj_acid.yy",},},

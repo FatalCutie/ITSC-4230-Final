@@ -22,6 +22,7 @@
     {"name":"obj_tail","order":9,"path":"objects/obj_tail/obj_tail.yy",},
     {"name":"obj_tutorial1","order":11,"path":"objects/obj_tutorial1/obj_tutorial1.yy",},
     {"name":"OLDspr_player","order":1,"path":"sprites/OLDspr_player/OLDspr_player.yy",},
+    {"name":"path_saw_acid","order":1,"path":"paths/path_saw_acid/path_saw_acid.yy",},
     {"name":"obj_wall","order":1,"path":"objects/obj_wall/obj_wall.yy",},
     {"name":"spr_robot","order":6,"path":"sprites/spr_robot/spr_robot.yy",},
     {"name":"obj_acid","order":5,"path":"objects/obj_acid/obj_acid.yy",},
