@@ -1,4 +1,5 @@
 /// @description Asks the player to restart after death
+draw_set_font(fnt_everything_else);
 if (global.game_over)
 {
 	draw_set_halign(fa_center)
@@ -12,3 +13,4 @@ if (global.game_over)
 	if (funnyGameover) draw_text(x, y + 40, "Canon death enabled")
 	if (timerCheat)  draw_text(x, y + 60, "Timer Paused")
 }
+
