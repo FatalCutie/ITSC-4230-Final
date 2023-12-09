@@ -35,6 +35,7 @@ switch(state)
 			grounded = false
 			vSpeedFraction = 0
 			vSpeed = -jumpSpeed
+			audio_play_sound(snd_jump, 10, false)
 		}
 		
 		//Removed all grapple info

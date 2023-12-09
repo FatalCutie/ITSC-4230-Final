@@ -34,6 +34,7 @@ switch(state)
 			grounded = false
 			vSpeedFraction = 0
 			vSpeed = -jumpSpeed
+			audio_play_sound(snd_jump, 10, false)
 		}
 		
 		
@@ -47,6 +48,7 @@ switch(state)
 			ropeAngle = point_direction(grappleX, grappleY, x, y)
 			ropeLength = point_distance(grappleX, grappleY, x, y)
 			state = pState.swing
+			audio_play_sound(snd_grapple, 10, false)
 		}
 		
 	} break;
@@ -84,6 +86,7 @@ switch(state)
 			state = pState.leap
 			vSpeedFraction = 0
 			vSpeed = -jumpSpeed
+			audio_play_sound(snd_leap, 10, false)
 		}
 		if (_keyDown)
 		{
