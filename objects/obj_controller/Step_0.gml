@@ -1,5 +1,5 @@
 var timerTick = delta_time/1000000
-if (timerCheat = 1)
+if (timerCheat = false)
 {
 	if(myTime > 0)
 	{
