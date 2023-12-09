@@ -9,7 +9,7 @@ if (global.game_over)
 {
 	draw_set_color(c_white)
 	draw_text(x, y, "Time left: " + string(showTime))
-	draw_text(x, y + 20, "Score: " + string(score))
+	draw_text(x, y + 20, "\nScore: " + string(score))
 	if (funnyGameover) draw_text(x, y + 40, "Canon death enabled")
 	if (timerCheat)  draw_text(x, y + 60, "Timer Paused")
 }
